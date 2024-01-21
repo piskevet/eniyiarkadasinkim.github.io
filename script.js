@@ -1,16 +1,8 @@
-function showResult(option) {
-  let result = document.getElementById('result');
-  if (option === 'seçenek1') {
-    result.textContent = 'En iyi arkadaşın: Arkadaş 1';
-  } else if (option === 'seçenek2') {
-    result.textContent = 'En iyi arkadaşın: Arkadaş 2';
-  }
+// Rastgele konum hesaplama ve buton oluşturma fonksiyonu
+function createRandomButton() {
+  let randomX = Math.floor(Math.random() * (window.innerWidth - 100)); // Pencere genişliği içinde rastgele X konumu
+  let randomY = Math.floor(Math.random() * (window.innerHeight - 100)); // Pencere yüksekliği içinde rastgele Y konumu
 
-  // Rastgele konum hesaplama
-  let randomX = Math.floor(Math.random() * window.innerWidth);
-  let randomY = Math.floor(Math.random() * window.innerHeight);
-
-  // Butonun konumunu güncelleme
   let button = document.createElement('button');
   button.textContent = 'Seçenek 1';
   button.onclick = function() { showResult('seçenek1'); };
@@ -27,3 +19,8 @@ function showResult(option) {
   // Yeni butonu ekleme
   document.querySelector('.options').appendChild(button);
 }
+
+// İmleç üstüne gelindiğinde buton oluştur
+document.addEventListener('mousemove', function(e) {
+  createRandomButton();
+});
