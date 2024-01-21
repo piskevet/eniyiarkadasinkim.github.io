@@ -20,36 +20,31 @@ function createRandomButton() {
   let randomY = Math.floor(Math.random() * (window.innerHeight - 100));
 
   let button = document.createElement('button');
-  button.textContent = 'Seçenek 1';
+  button.textContent = 'Seçenek 2';
   button.onclick = function() {
-    let oldButton = document.querySelector('.options button');
-    if (oldButton && oldButton.textContent === 'Seçenek 1') {
-      oldButton.remove(); // Eski butonu kaldır
-    }
-    createRandomButton(); // Yeni buton oluştur
-    showResult('seçenek1'); // Sonucu göster
+    showResult('seçenek2'); // Sonucu göster
   };
   button.style.position = 'absolute';
   button.style.left = randomX + 'px';
-  button.style.top = randomY + 'px";
+  button.style.top = randomY + 'px';
 
   let oldButton = document.querySelector('.options button');
-  if (oldButton && oldButton.textContent === 'Seçenek 1') {
-    oldButton.remove(); // Eski butonu kaldır
+  if (oldButton && oldButton.textContent === 'Seçenek 2') {
+    oldButton.remove();
   }
 
   document.querySelector('.options').appendChild(button);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded',function() {
   createInitialButtons();
 });
 
 function showResult(option) {
   let result = document.getElementById('result');
   if (option === 'seçenek1') {
-    result.textContent = 'En iyi arkadaşın: Arkadaş 1';
+    result.textContent = 'seçenek 1 seçildi';
   } else if (option === 'seçenek2') {
-    result.textContent = 'En iyi arkadaşın: Arkadaş 2';
+    result.textContent = 'seçenek 2 seçildi';
   }
 }
