@@ -1,3 +1,29 @@
+function createInitialButtons() {
+  let button1 = document.createElement('button');
+  button1.textContent = 'Seçenek 1';
+  button1.onclick = function() {
+    button1.remove(); // Butonu kaldır
+    createRandomButton(); // Rastgele buton oluştur
+    showResult('seçenek1'); // Sonucu göster
+  };
+  button1.style.position = 'absolute';
+  button1.style.left = '50%';
+  button1.style.top = '50%';
+  document.querySelector('.options').appendChild(button1);
+
+  let button2 = document.createElement('button');
+  button2.textContent = 'Seçenek 2';
+  button2.onclick = function() {
+    button2.remove(); // Butonu kaldır
+    createRandomButton(); // Rastgele buton oluştur
+    showResult('seçenek2'); // Sonucu göster
+  };
+  button2.style.position = 'absolute';
+  button2.style.left = '50%';
+  button2.style.top = '50%';
+  document.querySelector('.options').appendChild(button2);
+}
+
 function createRandomButton() {
   let randomX = Math.floor(Math.random() * (window.innerWidth - 100));
   let randomY = Math.floor(Math.random() * (window.innerHeight - 100));
@@ -6,7 +32,7 @@ function createRandomButton() {
   button.textContent = 'Seçenek 1';
   button.onclick = function() {
     button.remove(); // Butonu kaldır
-    createRandomButton(); // Yeni buton oluştur
+    createRandomButton(); // Rastgele buton oluştur
     showResult('seçenek1'); // Sonucu göster
   };
   button.style.position = 'absolute';
@@ -21,16 +47,15 @@ function createRandomButton() {
   document.querySelector('.options').appendChild(button);
 }
 
-// Butona tıklanınca buton oluştur
-document.querySelector('.options').addEventListener('click', function(e) {
-  createRandomButton();
+document.addEventListener('DOMContentLoaded', function() {
+  createInitialButtons();
 });
 
 function showResult(option) {
   let result = document.getElementById('result');
   if (option === 'seçenek1') {
-    result.textContent = 'Bir Hata Oluştu.';
+    result.textContent = 'En iyi arkadaşın: Arkadaş 1';
   } else if (option === 'seçenek2') {
-    result.textContent = 'En iyi arkadaşın: Bayu';
+    result.textContent = 'En iyi arkadaşın: Arkadaş 2';
   }
 }
