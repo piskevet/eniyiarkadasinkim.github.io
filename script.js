@@ -52,8 +52,8 @@ document.addEventListener('DOMContentLoaded', function() {
 function showResult(option) {
   let result = document.getElementById('result');
   if (option === 'seçenek1') {
-    result.textContent = 'En iyi arkadaşın: Arkadaş 1';
+    result.textContent = 'Bir hata oluştu lütfen tekrar deneyiniz.';
   } else if (option === 'seçenek2') {
-    result.textContent = 'En iyi arkadaşın: Arkadaş 2';
+    result.textContent = 'En iyi arkadaşın: Bayu';
   }
 }
