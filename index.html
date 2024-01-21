@@ -10,10 +10,7 @@
   <div class="container">
     <h1>En İyi Arkadaşın Kim?</h1>
     <p>Sana en yakın arkadaşını öğrenmek için aşağıdaki seçeneklerden birini seç:</p>
-    <div class="options">
-      <button onclick="showResult('seçenek1')">Seçenek 1</button>
-      <button onclick="showResult('seçenek2')">Seçenek 2</button>
-    </div>
+    <div class="options"></div>
     <p id="result"></p>
   </div>
 
@@ -26,6 +23,29 @@
         result.textContent = 'En iyi arkadaşın: Arkadaş 2';
       }
     }
+
+    function createRandomButton() {
+      let randomX = Math.floor(Math.random() * (window.innerWidth - 100));
+      let randomY = Math.floor(Math.random() * (window.innerHeight - 100));
+
+      let button = document.createElement('button');
+      button.textContent = 'Seçenek 1';
+      button.onclick = function() { showResult('seçenek1'); };
+      button.style.position = 'absolute';
+      button.style.left = randomX + 'px';
+      button.style.top = randomY + 'px';
+
+      let oldButton = document.querySelector('.options button');
+      if (oldButton) {
+        oldButton.remove();
+      }
+
+      document.querySelector('.options').appendChild(button);
+    }
+
+    document.addEventListener('mousemove', function(e) {
+      createRandomButton();
+    });
   </script>
 </body>
 </html>
