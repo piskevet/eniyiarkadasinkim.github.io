@@ -10,16 +10,6 @@ function createInitialButtons() {
   button1.style.left = '50%';
   button1.style.top = '50%';
   document.querySelector('.options').appendChild(button1);
-
-  let button2 = document.createElement('button');
-  button2.textContent = 'Seçenek 2';
-  button2.onclick = function() {
-    showResult('seçenek2'); // Sonucu göster
-  };
-  button2.style.position = 'absolute';
-  button2.style.left = '50%';
-  button2.style.top = '50px'; // Örnek olarak 50px aşağıda
-  document.querySelector('.options').appendChild(button2);
 }
 
 function createRandomButton() {
@@ -52,8 +42,8 @@ document.addEventListener('DOMContentLoaded', function() {
 function showResult(option) {
   let result = document.getElementById('result');
   if (option === 'seçenek1') {
-    result.textContent = 'Bir hata oluştu lütfen tekrar deneyiniz.';
+    result.textContent = 'En iyi arkadaşın: Arkadaş 1';
   } else if (option === 'seçenek2') {
-    result.textContent = 'En iyi arkadaşın: Bayu';
+    result.textContent = 'En iyi arkadaşın: Arkadaş 2';
   }
 }
