@@ -20,16 +20,21 @@ function createRandomButton() {
   let randomY = Math.floor(Math.random() * (window.innerHeight - 100));
 
   let button = document.createElement('button');
-  button.textContent = 'Seçenek 2';
+  button.textContent = 'Seçenek 1';
   button.onclick = function() {
-    showResult('seçenek2'); // Sonucu göster
+    let oldButton = document.querySelector('.options button');
+    if (oldButton && oldButton.textContent === 'Seçenek 1') {
+      oldButton.remove(); // Eski butonu kaldır
+    }
+    createRandomButton(); // Yeni buton oluştur
+    showResult('seçenek1'); // Sonucu göster
   };
   button.style.position = 'absolute';
   button.style.left = randomX + 'px';
-  button.style.top = randomY + 'px';
+  button.style.top = randomY + 'px";
 
   let oldButton = document.querySelector('.options button');
-  if (oldButton && oldButton.textContent === 'Seçenek 2') {
+  if (oldButton && oldButton.textContent === 'Seçenek 1') {
     oldButton.remove();
   }
 
