@@ -31,6 +31,6 @@ function showResult(option) {
   if (option === 'seçenek1') {
     result.textContent = 'Bir Hata Oluştu.';
   } else if (option === 'seçenek2') {
-    result.textContent = 'En iyi arkadaşın: Arkadaş 2';
+    result.textContent = 'En iyi arkadaşın: Bayu';
   }
 }
