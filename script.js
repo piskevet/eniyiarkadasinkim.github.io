@@ -35,7 +35,7 @@ function createRandomButton() {
 
   let oldButton = document.querySelector('.options button');
   if (oldButton && oldButton.textContent === 'Seçenek 1') {
-    oldButton.remove();
+    oldButton.remove(); // Eski butonu kaldır
   }
 
   document.querySelector('.options').appendChild(button);
