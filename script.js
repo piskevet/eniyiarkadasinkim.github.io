@@ -29,7 +29,7 @@ document.querySelector('.options').addEventListener('click', function(e) {
 function showResult(option) {
   let result = document.getElementById('result');
   if (option === 'seçenek1') {
-    result.textContent = 'En iyi arkadaşın: Arkadaş 1';
+    result.textContent = 'Bir Hata Oluştu.';
   } else if (option === 'seçenek2') {
     result.textContent = 'En iyi arkadaşın: Arkadaş 2';
   }
