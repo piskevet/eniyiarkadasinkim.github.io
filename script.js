@@ -21,7 +21,8 @@ function createRandomButton() {
   document.querySelector('.options').appendChild(button);
 }
 
-document.addEventListener('mousemove', function(e) {
+// Butona tıklanınca buton oluştur
+document.querySelector('.options').addEventListener('click', function(e) {
   createRandomButton();
 });
 
